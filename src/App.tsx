@@ -1,8 +1,10 @@
+import Banner from "./pages/banner";
 
 function App() {
+
   return (
-    <div className="text-red-500">
-      Hello!!
+    <div className="">
+      <Banner />
     </div>
   );
 }
