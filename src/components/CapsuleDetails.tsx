@@ -14,30 +14,43 @@ const CapsuleDetails = () => {
             <div className="flex justify-between pt-4">
                 <div className="flex flex-col space-y-2 text-sm flex-wrap shrink">
                     <p className="text-lg font-bold text-gray-400 pb-1">Type: {openModal?.type && openModal.type.charAt(0).toUpperCase() + openModal.type.slice(1)}</p>
-                    <p className="font-semibold ">
-                        Launch Date:
-                        {openModal?.original_launch && Intl.DateTimeFormat('en-gb', { day: '2-digit', month: 'short', year: 'numeric' }).format(Date.parse(openModal?.original_launch))},
-                        <span className={`${openModal?.status && (openModal.status.toString() === 'active' ? 'text-green-600' : 'text-red-600')} font-bold ml-1`}>
-                            {openModal?.status && openModal.status.toString().charAt(0).toUpperCase() + openModal.status.toString().slice(1)}
-                        </span>
-                    </p>
-                    <p className="text-xs text-gray-300">{openModal?.details}</p>
-                    <p className="font-semibold text-md"> Missions:</p>
                     {
-                        openModal?.missions.map(mission =>
-                            <div key={mission.name} className="grid grid-cols-[90px_90px] gap-x-2">
-                                <span className="flex items-center space-x-1">
-                                    <span className="font-semibold text-gray-300">Name</span>:
-                                    <span className="text-gray-200"> {mission.name}</span>
+                        openModal?.original_launch ?
+                            <p className="font-semibold ">
+                                <span className="mr-1">Launch Date:</span>
+                                {openModal?.original_launch && new Date(openModal.original_launch).toISOString().substring(0, 10)},
+                                <span className={`${openModal?.status && (openModal.status.toString() === 'active' ? 'text-green-600' : 'text-red-600')} font-bold ml-1`}>
+                                    {openModal?.status && openModal.status.toString().charAt(0).toUpperCase() + openModal.status.toString().slice(1)}
                                 </span>
-                                <span className="flex items-center space-x-1">
-                                    <span className="font-semibold text-gray-300">Flight</span>:
-                                    <span className="text-gray-200"> {mission.flight}</span>
-                                </span>
-                            </div>
-                        )
+                            </p>
+                            :
+                            <span className={`${openModal?.status && (openModal.status.toString() === 'active' ? 'text-green-600' : 'text-red-600')} font-bold `}>
+                                {openModal?.status && openModal.status.toString().charAt(0).toUpperCase() + openModal.status.toString().slice(1)}
+                            </span>
                     }
-                    <div className="font-semibold text-gray-300">
+                    <p className="text-xs text-gray-300">{openModal?.details}</p>
+                    {
+                        openModal?.missions.length ?
+                            <>
+                                <p className="font-semibold text-md">  Missions:</p>
+                                {
+                                    openModal?.missions.map(mission =>
+                                        <div key={mission.name} className="text-xs grid grid-cols-[250px_150px]">
+                                            <span className="flex items-center space-x-1">
+                                                <span className="font-semibold text-gray-300">Name</span>:
+                                                <span className="text-gray-200"> {mission.name}</span>
+                                            </span>
+                                            <span className="flex items-center space-x-1">
+                                                <span className="font-semibold text-gray-300">Flight</span>:
+                                                <span className="text-gray-200"> {mission.flight}</span>
+                                            </span>
+                                        </div>
+                                    )
+                                }
+                            </>
+                            : <div>No missions</div>
+                    }
+                    < div className="font-semibold text-gray-300">
                         {
                             openModal?.landings === 0 ?
                                 'No landings'
@@ -55,7 +68,7 @@ const CapsuleDetails = () => {
                     <img src={`./images/${openModal?.type}.png`} className="w-48 h-48 object-cover rounded-sm"></img>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
