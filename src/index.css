@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.underline-navbar {
+    @apply hover:before:scale-x-100 hover:before:origin-left relative before:w-full before:h-[1.5px] before:origin-right before:transition-transform before:duration-300 before:scale-x-0 before:bg-white before:absolute before:left-0 before:bottom-0
+}
