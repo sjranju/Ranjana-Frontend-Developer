@@ -1,10 +1,14 @@
-import Banner from "./pages/banner";
+import Banner from "./components/Banner";
+import Capsules from "./components/Capsules";
+import Search from "./components/Search";
 
 function App() {
 
   return (
-    <div className="">
+    <div className="min-h-screen">
       <Banner />
+      <Search />
+      <Capsules />
     </div>
   );
 }

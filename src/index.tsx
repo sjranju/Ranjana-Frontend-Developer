@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import OpenCapsuleModal from './context/OpenCapsuleModal';
+import CapsuleData from './context/CapsuleContext';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -18,7 +20,11 @@ const router = createBrowserRouter([
 )
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <CapsuleData>
+      <OpenCapsuleModal>
+        <RouterProvider router={router} />
+      </OpenCapsuleModal>
+    </CapsuleData>
   </React.StrictMode>
 );
 
