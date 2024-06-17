@@ -6,7 +6,7 @@ import Search from "./components/Search";
 function App() {
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen min-w-full">
       <Banner />
       <Search />
       <Capsules />

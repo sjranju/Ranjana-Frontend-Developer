@@ -7,17 +7,17 @@ const CapsuleDetails = () => {
     const { openModal, setOpenModal } = useContext(showCapsuleDetials)
 
     return (
-        <div className={` ${openModal?.capsule_id ? 'relative w-[700px] h-[400px] bg-gray-800 text-white shadow-2xl py-14 px-10 flex flex-col justify-center text-lg rounded-md z-40' : 'hidden'}`}>
+        <div className={` ${openModal?.capsule_id ? 'relative h-auto w-2/3 md:w-[700px] bg-gray-800 text-white shadow-2xl py-14 px-10 flex flex-col justify-center text-sm md:text-lg rounded-md z-50' : 'hidden'}`}>
             <button className="absolute top-4 right-4 font-bold hover:scale-110" onClick={() => setOpenModal(undefined)}>{<IoMdClose size={24} />}</button>
-            <p className="text-3xl font-bold pb-2 border-b">{openModal?.capsule_serial && openModal.capsule_serial.charAt(0).toUpperCase() + openModal.capsule_serial.slice(1)}</p>
+            <p className="text-lg md:text-3xl font-bold pb-2 border-b">{openModal?.capsule_serial && openModal.capsule_serial.charAt(0).toUpperCase() + openModal.capsule_serial.slice(1)}</p>
             {/* Capsule details */}
             <div className="flex justify-between pt-4">
-                <div className="flex flex-col space-y-2 text-sm flex-wrap shrink">
-                    <p className="text-lg font-bold text-gray-400 pb-1">Type: {openModal?.type && openModal.type.charAt(0).toUpperCase() + openModal.type.slice(1)}</p>
+                <div className="flex flex-col space-y-2 text-xs md:text-sm flex-wrap shrink">
+                    <p className="text-sm md:text-lg font-bold text-gray-400 pb-1">Type: {openModal?.type && openModal.type.charAt(0).toUpperCase() + openModal.type.slice(1)}</p>
                     {
                         openModal?.original_launch ?
                             <p className="font-semibold ">
-                                <span className="mr-1">Launch Date:</span>
+                                <span className="mr-1 text-xs md:text-base">Launch Date:</span>
                                 {openModal?.original_launch && new Date(openModal.original_launch).toISOString().substring(0, 10)},
                                 <span className={`${openModal?.status && (openModal.status.toString() === 'active' ? 'text-green-600' : 'text-red-600')} font-bold ml-1`}>
                                     {openModal?.status && openModal.status.toString().charAt(0).toUpperCase() + openModal.status.toString().slice(1)}
@@ -32,10 +32,10 @@ const CapsuleDetails = () => {
                     {
                         openModal?.missions.length ?
                             <>
-                                <p className="font-semibold text-md">  Missions:</p>
+                                <p className="font-semibold text-xs md:text-base">  Missions:</p>
                                 {
                                     openModal?.missions.map(mission =>
-                                        <div key={mission.name} className="text-xs grid grid-cols-[250px_150px]">
+                                        <div key={mission.name} className="text-[10px] md:text-xs grid grid-cols-2">
                                             <span className="flex items-center space-x-1">
                                                 <span className="font-semibold text-gray-300">Name</span>:
                                                 <span className="text-gray-200"> {mission.name}</span>
@@ -64,7 +64,7 @@ const CapsuleDetails = () => {
 
                 </div>
                 {/* Capsule image */}
-                <div className="flex shrink-0">
+                <div className="flex shrink">
                     <img src={`./images/${openModal?.type}.png`} className="w-48 h-48 object-cover rounded-sm"></img>
                 </div>
             </div>
