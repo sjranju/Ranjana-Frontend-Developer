@@ -1,4 +1,4 @@
-export enum Status { active = 'active', unknown = 'unknown', retired = 'retired' }
+export enum Status { active = 'active', unknown = 'unknown', retired = 'retired', destroyed = 'destroyed' }
 
 export type CapsuleData = {
     capsule_serial: string,

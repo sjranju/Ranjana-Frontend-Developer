@@ -9,7 +9,7 @@ const Banner = () => {
                 <div className="flex flex-row items-center justify-center sm:justify-between">
                     {/* Logo container with link to homepage */}
                     <div className="flex">
-                        <Link to={'/'} className="hover:skew-x-1 transition-all duration-200 ease-in-out"><img src="./images/logo3.png" alt="" className="hidden sm:flex sm:h-auto sm:w-52" /></Link>
+                        <Link to={'/'} className="hover:skew-x-1 transition-all duration-200 ease-in-out"><img src="./images/logo3.png" alt="Logo" className="hidden sm:flex sm:h-auto sm:w-52" /></Link>
                     </div>
                     {/* Navbar */}
                     <div className="flex space-x-6 text-xs sm:text-base">
