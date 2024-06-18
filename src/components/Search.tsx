@@ -40,7 +40,13 @@ const Search = () => {
             </div>
             <div className="flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0 ">
                 <div className="w-full md:w-1/4">
-                    <select value={status} onChange={(e) => setStatus(e.target.value)} name="status" className="w-full pl-1 py-2 ring-1 ring-gray-100 rounded-md text-left bg-slate-100 shadow-md">
+                    <select
+                        value={status}
+                        onChange={(e) => setStatus(e.target.value)}
+                        name="status"
+                        aria-label="status"
+                        className="w-full pl-1 py-2 ring-1 ring-gray-100 rounded-md text-left bg-slate-100 shadow-md"
+                    >
                         <option value='Status (Please select one)' className="text-gray-600 md:text-base">Status (Please select one)</option>
                         {
                             Object.values(Status).map(curStatus =>
@@ -52,7 +58,13 @@ const Search = () => {
                     </select>
                 </div>
                 <div className="w-full md:w-1/4">
-                    <select value={type} onChange={(e) => setType(e.target.value)} name="type" className="w-full pl-1 py-2 ring-1 ring-gray-100 rounded-md text-left bg-slate-100 shadow-md">
+                    <select
+                        value={type}
+                        onChange={(e) => setType(e.target.value)}
+                        name="type"
+                        aria-label="type"
+                        className="w-full pl-1 py-2 ring-1 ring-gray-100 rounded-md text-left bg-slate-100 shadow-md"
+                    >
                         <option value='Type (Please select one)' className="text-gray-600 md:text-base">Type (Please select one)</option>
                         <option value="Dragon 1.0" className="p-10">Dragon 1.0</option>
                         <option value="Dragon 1.1" className="p-10">Dragon 1.1</option>
@@ -62,10 +74,12 @@ const Search = () => {
                 <div className="w-full md:w-1/4">
                     <input
                         type="text"
+                        value={date}
                         onChange={(e) => setDate(e.target.value)}
                         onFocus={(e) => (e.target.type = "date")}
                         onBlur={(e) => (e.target.type = "date")}
                         placeholder="Please choose launch date"
+                        aria-placeholder="Please choose launch date"
                         className="placeholder:text-gray-600 w-full pl-1 py-2 ring-1 ring-gray-100 rounded-md text-left bg-slate-100 shadow-md"
                     />
                 </div>
