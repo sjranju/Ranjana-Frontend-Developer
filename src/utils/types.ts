@@ -6,14 +6,12 @@ export type CapsuleData = {
     status: Status,
     original_launch: string,
     original_launch_unix: number,
-    missions: [
-        {
-            name: string,
-            flight: number
-        }
-    ],
+    missions: {
+        name: string,
+        flight: number
+    }[],
     landings: number,
     type: string,
-    details: string,
+    details: string | null,
     reuse_count: number
 }

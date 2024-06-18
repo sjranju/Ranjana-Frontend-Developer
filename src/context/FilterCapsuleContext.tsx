@@ -6,16 +6,16 @@ type CapsuleStateType = {
     setFilterData: React.Dispatch<React.SetStateAction<CapsuleData[] | undefined>>
 }
 
-export const FilterCapsuleDatContext = createContext<CapsuleStateType>({} as CapsuleStateType)
+export const FilterCapsuleDataContext = createContext<CapsuleStateType>({} as CapsuleStateType)
 
 const FilterCapsuleContext = ({ children }: { children: ReactElement }) => {
 
     const [filterData, setFilterData] = useState<CapsuleData[] | undefined>(undefined)
 
     return (
-        <FilterCapsuleDatContext.Provider value={{ filterData, setFilterData }}>
+        <FilterCapsuleDataContext.Provider value={{ filterData, setFilterData }}>
             {children}
-        </FilterCapsuleDatContext.Provider>
+        </FilterCapsuleDataContext.Provider>
     )
 }
 

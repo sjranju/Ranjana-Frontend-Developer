@@ -7,6 +7,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import OpenCapsuleModal from './context/OpenCapsuleModal';
 import CapsuleData from './context/CapsuleContext';
 import FilterCapsuleContext from './context/FilterCapsuleContext';
+import CapsuleContext from './context/CapsuleContext';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -21,13 +22,13 @@ const router = createBrowserRouter([
 )
 root.render(
   <React.StrictMode>
-    <CapsuleData>
+    <CapsuleContext>
       <FilterCapsuleContext>
         <OpenCapsuleModal>
           <RouterProvider router={router} />
         </OpenCapsuleModal>
       </FilterCapsuleContext>
-    </CapsuleData>
+    </CapsuleContext>
   </React.StrictMode>
 );
 

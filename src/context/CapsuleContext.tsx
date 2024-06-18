@@ -6,16 +6,16 @@ type CapsuleStateType = {
     setData: React.Dispatch<React.SetStateAction<CapsuleData[] | undefined>>
 }
 
-export const CapsuleDatContext = createContext<CapsuleStateType>({} as CapsuleStateType)
+export const CapsuleDataContext = createContext<CapsuleStateType>({} as CapsuleStateType)
 
 const CapsuleContext = ({ children }: { children: ReactElement }) => {
 
     const [data, setData] = useState<CapsuleData[] | undefined>(undefined)
 
     return (
-        <CapsuleDatContext.Provider value={{ data, setData }}>
+        <CapsuleDataContext.Provider value={{ data, setData }}>
             {children}
-        </CapsuleDatContext.Provider>
+        </CapsuleDataContext.Provider>
     )
 }
 
