@@ -25,7 +25,7 @@ const CapsuleCard = ({ capsule, setOpenModal }: { capsule: CapsuleData, setOpenM
                 <div className="text-sm text-gray-300">
                     Launch Date:
                     <span className="ml-1">
-                        {new Date(capsule.original_launch).toISOString().slice(0, 10)}
+                        {capsule.original_launch ? new Date(capsule.original_launch).toISOString().slice(0, 10) : 'Yet to be revealed'}
                     </span>
                 </div>
             </div>

@@ -50,7 +50,7 @@ const CapsuleList = ({ pageTitle, apiEndpoint, capsuleState }: CapsuleListProps)
     const numOfPages = Math.ceil((filterData?.length ? filterData.length : localData?.length || 0) / NUM_OF_CARDS_PER_PAGE);
 
     return (
-        <div className="h-screen w-full bg-[#BFB6A0] px-20">
+        <div className="min-h-screen w-full bg-[#BFB6A0] px-20 pb-12">
             <div className="flex justify-between items-center">
                 <div className="">{capsuleState && <div className="text-xl font-bold pt-6">{capsuleState}</div>}</div>
             </div>

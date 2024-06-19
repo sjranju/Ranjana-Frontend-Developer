@@ -34,8 +34,8 @@ const Capsules = () => {
 
 
     return (
-        <div className="h-screen w-full bg-[#BFB6A0] px-20 pb-12 mt-12">
-            <div className="flex justify-between items-center">
+        <div className="min-h-screen w-full bg-[#BFB6A0] px-20 pb-12 pt-24">
+            <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 justify-between items-center">
                 <div className="font-bold text-2xl">Capsules</div>
                 <Search />
             </div>

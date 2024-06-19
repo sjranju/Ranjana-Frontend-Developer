@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 function App() {
 
   return (
-    <div className="relative min-h-screen min-w-full bg-[#BFB6A0]">
+    <div className="min-h-screen min-w-full bg-[#BFB6A0]">
       <Banner />
       <Capsules />
       <Footer />

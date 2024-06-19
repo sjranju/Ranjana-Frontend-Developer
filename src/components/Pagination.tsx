@@ -10,7 +10,7 @@ const Pagination = ({ currentPage, numOfPages, setCurrentPage }: PaginationProps
     const pageNumbers = Array.from({ length: numOfPages }, (_, i) => i + 1);
 
     return (
-        <div className="flex space-x-4 justify-end pt-4 pb-16">
+        <div className="flex space-x-4 justify-center md:justify-end pt-4">
             {/* PREV button */}
             <button
                 onClick={() => { currentPage > 1 && setCurrentPage(prev => prev - 1) }}

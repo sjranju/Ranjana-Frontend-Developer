@@ -15,7 +15,7 @@ const Header = ({ bgColor, textColor }: HeaderProps) => {
     };
 
     return (
-        <div className={`flex flex-row items-center justify-center sm:justify-between px-20 py-2 ${bgColor ? `bg-${bgColor}` : ''} ${textColor ? `text-${textColor}` : ''}`}>
+        <div className={`flex flex-row items-center justify-center sm:justify-between px-20 py-2 h-14 ${bgColor ? `bg-${bgColor}` : ''} ${textColor ? `text-${textColor}` : ''}`}>
             {/* Logo container with link to homepage */}
             <div className="flex">
                 <Link to={'/'} className="hover:skew-x-1 transition-all duration-200 ease-in-out">
