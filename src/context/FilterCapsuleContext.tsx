@@ -3,7 +3,7 @@ import { CapsuleData } from "../utils/types"
 
 type CapsuleStateType = {
     filterData: CapsuleData[] | undefined,
-    setFilterData: React.Dispatch<React.SetStateAction<CapsuleData[] | undefined>>
+    setFilterData: React.Dispatch<React.SetStateAction<CapsuleData[] | undefined>>,
 }
 
 export const FilterCapsuleDataContext = createContext<CapsuleStateType>({} as CapsuleStateType)

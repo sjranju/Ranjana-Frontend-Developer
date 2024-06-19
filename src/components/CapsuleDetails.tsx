@@ -28,6 +28,7 @@ const CapsuleDetails = () => {
                                 {openModal?.status && openModal.status.toString().charAt(0).toUpperCase() + openModal.status.toString().slice(1)}
                             </span>
                     }
+                    {/* Capsule Mission */}
                     <p className="text-xs text-gray-300">{openModal?.details}</p>
                     {
                         openModal?.missions.length ?
@@ -50,6 +51,7 @@ const CapsuleDetails = () => {
                             </>
                             : <div>No missions</div>
                     }
+                    {/* Landings */}
                     < div className="font-semibold text-gray-300">
                         {
                             openModal?.landings === 0 ?

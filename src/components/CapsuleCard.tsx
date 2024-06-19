@@ -5,6 +5,7 @@ import { CapsuleData } from "../utils/types"
 const CapsuleCard = ({ capsule, setOpenModal }: { capsule: CapsuleData, setOpenModal: any }) => {
 
     return (
+        // Display Capsule Card data like capsule serial, type, status and launch date
         <button data-testid="openCapsuleDetailsModal" className="hover:scale-95 transition-all ease-in-out duration-100 "
             onClick={() => setOpenModal(capsule)}>
             <div className="px-2 min-h-[150px] relative mx-auto flex flex-col space-y-1 justify-center font-semibold z-20 bg-[#093247] text-white shadow-lg shadow-gray-500 hover:shadow-gray-400 rounded-md">

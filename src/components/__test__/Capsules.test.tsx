@@ -29,9 +29,7 @@ const mockCapsuleData = {
 }
 
 describe('Capsules Component', () => {
-    it('should render capsules component', async () => {
-        mockedAxios.get.mockResolvedValue({ data: [mockCapsuleData] })
-
+    beforeAll(() => {
         render(
             <CapsuleDataContext.Provider value={{ data: [mockCapsuleData], setData: jest.fn() }}>
                 <FilterCapsuleDataContext.Provider value={{ filterData: [], setFilterData: jest.fn() }}>
@@ -41,6 +39,10 @@ describe('Capsules Component', () => {
                 </FilterCapsuleDataContext.Provider>
             </CapsuleDataContext.Provider>
         )
+    })
+
+    it('should render capsules component', async () => {
+        mockedAxios.get.mockResolvedValue({ data: [mockCapsuleData] })
 
         await waitFor(() => {
             expect(screen.getAllByText(/C112/).length).toEqual(2)
@@ -49,16 +51,6 @@ describe('Capsules Component', () => {
     })
     it('should show prev and next buttons disabled', async () => {
         mockedAxios.get.mockResolvedValue({ data: [mockCapsuleData] })
-
-        render(
-            <CapsuleDataContext.Provider value={{ data: [mockCapsuleData], setData: jest.fn() }}>
-                <FilterCapsuleDataContext.Provider value={{ filterData: [], setFilterData: jest.fn() }}>
-                    <showCapsuleDetials.Provider value={{ openModal: mockCapsuleData, setOpenModal: jest.fn() }}>
-                        <Capsules />
-                    </showCapsuleDetials.Provider>
-                </FilterCapsuleDataContext.Provider>
-            </CapsuleDataContext.Provider>
-        )
 
         await waitFor(() => {
             expect(screen.getAllByRole("button").length).toEqual(4)

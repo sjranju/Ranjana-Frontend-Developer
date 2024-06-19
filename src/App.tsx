@@ -1,14 +1,12 @@
 import Banner from "./components/Banner";
 import Capsules from "./components/Capsules";
 import Footer from "./components/Footer";
-import Search from "./components/Search";
 
 function App() {
 
   return (
-    <div className="min-h-screen min-w-full">
+    <div className="relative min-h-screen min-w-full bg-[#BFB6A0]">
       <Banner />
-      <Search />
       <Capsules />
       <Footer />
     </div>
