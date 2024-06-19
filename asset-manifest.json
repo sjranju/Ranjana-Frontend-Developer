@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Ranjana-Frontend-Developer/static/css/main.d0d393fe.css",
-    "main.js": "/Ranjana-Frontend-Developer/static/js/main.d86eb1be.js",
+    "main.js": "/Ranjana-Frontend-Developer/static/js/main.7504e5de.js",
     "static/js/453.78d21034.chunk.js": "/Ranjana-Frontend-Developer/static/js/453.78d21034.chunk.js",
     "index.html": "/Ranjana-Frontend-Developer/index.html",
     "main.d0d393fe.css.map": "/Ranjana-Frontend-Developer/static/css/main.d0d393fe.css.map",
-    "main.d86eb1be.js.map": "/Ranjana-Frontend-Developer/static/js/main.d86eb1be.js.map",
+    "main.7504e5de.js.map": "/Ranjana-Frontend-Developer/static/js/main.7504e5de.js.map",
     "453.78d21034.chunk.js.map": "/Ranjana-Frontend-Developer/static/js/453.78d21034.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d0d393fe.css",
-    "static/js/main.d86eb1be.js"
+    "static/js/main.7504e5de.js"
   ]
 }
