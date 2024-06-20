@@ -47,7 +47,7 @@ const CapsuleList = ({ pageTitle, apiEndpoint, capsuleState }: CapsuleListProps)
     const startIndex = (currentPage - 1) * NUM_OF_CARDS_PER_PAGE;
     const endIndex = startIndex + NUM_OF_CARDS_PER_PAGE;
     const currentData = localData?.slice(startIndex, endIndex)
-    const numOfPages = Math.ceil((filterData?.length ? filterData.length : localData?.length || 0) / NUM_OF_CARDS_PER_PAGE);
+    const numOfPages = Math.ceil((localData?.length || 0) / NUM_OF_CARDS_PER_PAGE);
 
     return (
         <div className="min-h-screen w-full bg-[#BFB6A0] px-20 pb-12">
